@@ -1,21 +1,21 @@
 # Compliance Flow
 
-An AI-powered blog generation system built with LangGraph and FastAPI that creates SEO-friendly blog content with multi-language translation support.
+An AI-powered compliance document generation system built with LangGraph and FastAPI that creates comprehensive compliance documentation with multi-language translation support.
 
 ## Features
 
-- **Automated Blog Generation**: Generate blog titles and content based on topics using AI
-- **Multi-Language Support**: Translate blog content to Hindi and French
+- **Automated Compliance Document Generation**: Generate compliance document titles and content based on topics using AI
+- **Multi-Language Support**: Translate compliance documents to Hindi and French
 - **LangGraph Workflow**: Structured state management and conditional routing
-- **FastAPI Backend**: RESTful API for blog generation
+- **FastAPI Backend**: RESTful API for compliance document generation
 - **LangSmith Integration**: Monitor and debug your LangGraph workflows
 
 ## Architecture
 
-The project uses LangGraph to orchestrate a multi-step blog generation workflow:
+The project uses LangGraph to orchestrate a multi-step compliance document generation workflow:
 
-1. **Title Creation**: Generates SEO-friendly blog titles
-2. **Content Generation**: Creates detailed blog content with markdown formatting
+1. **Title Creation**: Generates professional compliance document titles
+2. **Content Generation**: Creates detailed compliance documentation with markdown formatting
 3. **Translation** (optional): Translates content to specified language (Hindi/French)
 4. **Routing**: Conditionally routes to appropriate translation node
 
@@ -60,25 +60,25 @@ The server will start at `http://0.0.0.0:8000`
 
 ### API Endpoints
 
-#### Generate Blog (Topic Only)
+#### Generate Compliance Document (Topic Only)
 
 ```bash
 POST /blogs
 Content-Type: application/json
 
 {
-  "topic": "Artificial Intelligence in Healthcare"
+  "topic": "GDPR Data Protection Compliance"
 }
 ```
 
-#### Generate Blog with Translation
+#### Generate Compliance Document with Translation
 
 ```bash
 POST /blogs
 Content-Type: application/json
 
 {
-  "topic": "Artificial Intelligence in Healthcare",
+  "topic": "GDPR Data Protection Compliance",
   "language": "hindi"
 }
 ```
@@ -103,7 +103,7 @@ Compliance-Flow/
 │   ├── llms/
 │   │   └── groqllm.py          # Groq LLM configuration
 │   ├── nodes/
-│   │   └── blog_node.py        # Blog generation nodes
+│   │   └── blog_node.py        # Compliance document generation nodes
 │   └── states/
 │       └── blogstate.py        # State definitions
 ├── app.py                       # FastAPI application
@@ -115,10 +115,10 @@ Compliance-Flow/
 
 ## How It Works
 
-1. **Topic-Based Generation**: Provide a topic, and the system generates a complete blog post
+1. **Topic-Based Generation**: Provide a compliance topic, and the system generates a complete compliance document
 2. **Language Translation**: Optionally specify a language for automatic translation
 3. **Conditional Routing**: LangGraph routes to the appropriate translation node based on language
-4. **Structured Output**: Returns blog with title and content in markdown format
+4. **Structured Output**: Returns compliance document with title and content in markdown format
 
 ## Development
 
